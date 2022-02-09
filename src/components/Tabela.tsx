@@ -30,8 +30,10 @@ export default function Tabela(props: TabelaProps){
   }
 
   return (
-    <table>
-      <thead>
+    <table className={`w-full`}>
+      <thead className={`
+        bg-gradient-to-r from-purple-500 to-purple-800
+      `}>
         {renderizarCabecalho()}
       </thead>
       <tbody>
