@@ -15,7 +15,7 @@ export default function Home() {
   const [clientes, setClientes] = useState<Cliente[]>([]);
   const [visivel, setVisivel] = useState<"tabela" | "formulario">("tabela");  
 
-  useEffect(obterTodos, [])
+  useEffect(obterTodos, []);
 
   function obterTodos(){
     repo.obterTodos().then(clientes => {
