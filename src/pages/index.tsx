@@ -29,8 +29,9 @@ export default function Home() {
     setVisivel("formulario")
   }
 
-  function clienteExcluido(cliente: Cliente){
-    console.log(`Exclui ${cliente.nome}`)
+  async function clienteExcluido(cliente: Cliente){
+    await repo.excluir(cliente)
+    obterTodos()
   }
 
   function novoCliente(){
