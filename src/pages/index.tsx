@@ -32,13 +32,17 @@ export default function Home() {
         {visivel === "tabela" ? (
           <>
             <div className="flex justify-end">
-              <Botao className="mb-4">Novo Cliente</Botao>
+              <Botao className="mb-4" onClick={() => setVisivel("formulario")}>
+                Novo Cliente
+              </Botao>
             </div>        
             <Tabela clientes={clientes} clienteSelecionado={clienteSelecioando} clienteExcluido={clienteExcluido}
             />
           </>   
         ) : (
-          <Formulario cliente={clientes[0]}/>
+          <Formulario cliente={clientes[0]}
+            cancelado={()=> setVisivel("tabela")}
+            />
         )}        
       </Layout>
     </div>

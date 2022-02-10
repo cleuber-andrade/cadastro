@@ -5,6 +5,7 @@ import Cliente from "../core/Cliente";
 
 interface FormularioProps{
   cliente: Cliente
+  cancelado?: () => void
 }
 
 export default function Formulario(props: FormularioProps){
@@ -38,7 +39,7 @@ export default function Formulario(props: FormularioProps){
         <Botao className="mr-2">
           {id ? "Alterar" : "Salvar" }
         </Botao>
-        <Botao >
+        <Botao onClick={props.cancelado}>
           Cancelar
         </Botao>
       </div>
