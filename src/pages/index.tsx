@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import Tabela from "../components/Tabela";
+import Botao from "../components/Botao";
 import Cliente from "../core/Cliente";
 
 export default function Home() {
@@ -24,6 +25,9 @@ export default function Home() {
       bg-gradient-to-r from-blue-500 to-purple-500
     `}>
       <Layout titulo="Cadastro Simples">
+        <div className="flex justify-end">
+          <Botao className="mb-4">Novo Cliente</Botao>
+        </div>        
         <Tabela clientes={clientes} clienteSelecionado={clienteSelecioando} clienteExcluido={clienteExcluido}
         />
       </Layout>
