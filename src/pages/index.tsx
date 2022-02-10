@@ -26,7 +26,7 @@ export default function Home() {
     console.log(`Exclui ${cliente.nome}`)
   }
 
-  function novoCliente(cliente: Cliente){
+  function novoCliente(){
     setCliente(Cliente.vazio())
     setVisivel("formulario")
   }
