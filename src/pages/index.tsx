@@ -7,6 +7,9 @@ import { useState } from "react";
 
 export default function Home() {
 
+  const [cliente, setCliente] = useState<Cliente>(Cliente.vazio())
+  const [visivel, setVisivel] = useState<"tabela" | "formulario">("tabela")
+
   const clientes = [
     new Cliente("Ana", 34, "1"),
     new Cliente("Bia", 45, "2"),
@@ -15,7 +18,8 @@ export default function Home() {
   ]
 
   function clienteSelecioando(cliente: Cliente){
-    console.log(cliente.nome)
+    setCliente(cliente)
+    setVisivel("formulario")
   }
 
   function clienteExcluido(cliente: Cliente){
@@ -23,10 +27,15 @@ export default function Home() {
   }
 
   function salvarCliente(cliente: Cliente){
-    console.log(cliente)
+    setVisivel("tabela")
   }
 
-  const [visivel, setVisivel] = useState<"tabela" | "formulario">("tabela")
+  function novoCliente(cliente: Cliente){
+    setCliente(Cliente.vazio())
+    setVisivel("formulario")
+  }
+
+  
 
   return (
     <div className={`flex justify-center items-center h-screen
@@ -36,7 +45,7 @@ export default function Home() {
         {visivel === "tabela" ? (
           <>
             <div className="flex justify-end">
-              <Botao className="mb-4" onClick={() => setVisivel("formulario")}>
+              <Botao className="mb-4" onClick={novoCliente}>
                 Novo Cliente
               </Botao>
             </div>        
@@ -45,7 +54,7 @@ export default function Home() {
           </>   
         ) : (
           <Formulario 
-            cliente={clientes[0]}
+            cliente={cliente}
             clienteMudou={salvarCliente}
             cancelado={()=> setVisivel("tabela")}
           />
