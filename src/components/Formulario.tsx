@@ -24,7 +24,7 @@ export default function Formulario(props: FormularioProps){
           className="mb-5"
         />
       ): false}
-      
+
       <Entrada         
         texto="Nome" 
         valor={nome}

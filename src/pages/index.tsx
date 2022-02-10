@@ -14,7 +14,7 @@ export default function Home() {
     new Cliente("Ana", 34, "1"),
     new Cliente("Bia", 45, "2"),
     new Cliente("Carlos", 22, "3"),
-    new Cliente("Joana", 12, "3"),
+    new Cliente("Joana", 12, "4"),
   ]
 
   function clienteSelecioando(cliente: Cliente){
