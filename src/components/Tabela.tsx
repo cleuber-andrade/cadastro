@@ -22,7 +22,7 @@ export default function Tabela(props: TabelaProps){
     )
   }
 
-  function renderizarDados(){
+  function renderizarDados(){    
     return props.clientes?.map((cliente, i) => {
       return (
         <tr key={cliente.id} className={`${i % 2 === 0 ? "bg-purple-200" : "bg-purple-100"}`}>

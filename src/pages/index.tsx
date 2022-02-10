@@ -26,16 +26,15 @@ export default function Home() {
     console.log(`Exclui ${cliente.nome}`)
   }
 
-  function salvarCliente(cliente: Cliente){
-    setVisivel("tabela")
-  }
-
   function novoCliente(cliente: Cliente){
     setCliente(Cliente.vazio())
     setVisivel("formulario")
   }
 
-  
+  function salvarCliente(cliente: Cliente){
+    console.log(cliente)
+    setVisivel("tabela")
+  }  
 
   return (
     <div className={`flex justify-center items-center h-screen
@@ -45,11 +44,16 @@ export default function Home() {
         {visivel === "tabela" ? (
           <>
             <div className="flex justify-end">
-              <Botao className="mb-4" onClick={novoCliente}>
+              <Botao 
+                className="mb-4" 
+                onClick={novoCliente}
+              >
                 Novo Cliente
               </Botao>
             </div>        
-            <Tabela clientes={clientes} clienteSelecionado={clienteSelecioando} clienteExcluido={clienteExcluido}
+            <Tabela 
+              clientes={clientes} 
+              clienteSelecionado={clienteSelecioando} clienteExcluido={clienteExcluido}
             />
           </>   
         ) : (

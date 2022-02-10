@@ -17,14 +17,14 @@ export default function Formulario(props: FormularioProps){
   return(
     <div>
       {id ? (
-        <Entrada 
+        <Entrada           
           somenteLeitura
           texto="Código" 
           valor={id}
           className="mb-5"
         />
       ): false}
-      <Entrada 
+      <Entrada         
         texto="Nome" 
         valor={nome}
         valorMudou={setNome}
