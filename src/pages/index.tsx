@@ -31,7 +31,7 @@ export default function Home() {
         </div>        
         <Tabela clientes={clientes} clienteSelecionado={clienteSelecioando} clienteExcluido={clienteExcluido}
         />
-        <Formulario />
+        <Formulario cliente={clientes[0]}/>
       </Layout>
     </div>
   )
