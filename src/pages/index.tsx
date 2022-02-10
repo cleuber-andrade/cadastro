@@ -22,6 +22,10 @@ export default function Home() {
     console.log(`Exclui ${cliente.nome}`)
   }
 
+  function salvarCliente(cliente: Cliente){
+    console.log(cliente)
+  }
+
   const [visivel, setVisivel] = useState<"tabela" | "formulario">("tabela")
 
   return (
@@ -40,9 +44,11 @@ export default function Home() {
             />
           </>   
         ) : (
-          <Formulario cliente={clientes[0]}
+          <Formulario 
+            cliente={clientes[0]}
+            clienteMudou={salvarCliente}
             cancelado={()=> setVisivel("tabela")}
-            />
+          />
         )}        
       </Layout>
     </div>
